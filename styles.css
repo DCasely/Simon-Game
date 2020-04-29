@@ -64,6 +64,24 @@ p {
   justify-content: center;
 }
 
+.blocks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Lobster', cursive;
+  color: #fff;
+}
+
+.yellow-block,
+.red-block {
+  color: #000;
+}
+
+.blocks h2 {
+  font-size: 5rem;
+}
+
 .green-block {
   background-color: green;
   width: 15rem;

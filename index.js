@@ -41,12 +41,101 @@ function flashBlocks() {
 }
 
 // ===============================================
+// PLAYER SEQUENCE
+// ===============================================
+
+// GREEN BLOCK CLICK
+green.addEventListener('click', () => {
+  playerSequence.push('green');
+  console.log(playerSequence);
+
+  // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
+  if (playerSequence.length === gameSequence.length) {
+    // TEST IF PLAYER MADE CORRECT CHOICES
+    for (let i = 0; i < gameSequence.length; i++) {
+      if (playerSequence[i] !== gameSequence[i]) {
+        gameAlert.innerHTML = 'GAME OVER';
+        return false;
+      }
+    }
+
+    // RESET (playerSequence)
+    playerSequence = [];
+
+    nextSequence();
+  }
+});
+
+// RED BLOCK CLICK
+red.addEventListener('click', () => {
+  playerSequence.push('red');
+  console.log(playerSequence);
+
+  // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
+  if (playerSequence.length === gameSequence.length) {
+    // TEST IF PLAYER MADE CORRECT CHOICES
+    for (let i = 0; i < gameSequence.length; i++) {
+      if (playerSequence[i] !== gameSequence[i]) {
+        gameAlert.innerHTML = 'GAME OVER';
+        return false;
+      }
+    }
+
+    // RESET (playerSequence)
+    playerSequence = [];
+
+    nextSequence();
+  }
+});
+
+// YELLOW BLOCK CLICK
+yellow.addEventListener('click', () => {
+  playerSequence.push('yellow');
+  console.log(playerSequence);
+
+  // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
+  if (playerSequence.length === gameSequence.length) {
+    // TEST IF PLAYER MADE CORRECT CHOICES
+    for (let i = 0; i < gameSequence.length; i++) {
+      if (playerSequence[i] !== gameSequence[i]) {
+        gameAlert.innerHTML = 'GAME OVER';
+        return false;
+      }
+    }
+
+    // RESET (playerSequence)
+    playerSequence = [];
+
+    nextSequence();
+  }
+});
+
+// BLUE BLOCK CLICK
+blue.addEventListener('click', () => {
+  playerSequence.push('blue');
+  console.log(playerSequence);
+
+  // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
+  if (playerSequence.length === gameSequence.length) {
+    // TEST IF PLAYER MADE CORRECT CHOICES
+    for (let i = 0; i < gameSequence.length; i++) {
+      if (playerSequence[i] !== gameSequence[i]) {
+        gameAlert.innerHTML = 'GAME OVER';
+        return false;
+      }
+    }
+
+    // RESET (playerSequence)
+    playerSequence = [];
+
+    nextSequence();
+  }
+});
+
+// ===============================================
 // NEXT SEQUENCE
 // ===============================================
 function nextSequence() {
-  // RESET PLAYERSEQUENCE
-  // playerSequence = [];
-
   // REMOVE FLASH CLASSES FOR REPEAT
   green.classList.remove('flashit');
   red.classList.remove('flashit');
@@ -85,49 +174,15 @@ function resetGame() {
 }
 
 // ===============================================
-// GAME SEQUENCE AND PLAYER SEQUENCE
+// PLAYER VS GAME SEQUENCE
 // ===============================================
 
-// GREEN BLOCK CLICK
-green.addEventListener('click', () => {
-  playerSequence.push('green');
-
-  if (gameSequence[level - 1] !== playerSequence[level - 1]) {
-    gameAlert.innerHTML = 'GAME OVER';
-  } else {
-    nextSequence();
-  }
-});
-
-// RED BLOCK CLICK
-red.addEventListener('click', () => {
-  playerSequence.push('red');
-
-  if (gameSequence[level - 1] !== playerSequence[level - 1]) {
-    gameAlert.innerHTML = 'GAME OVER';
-  } else {
-    nextSequence();
-  }
-});
-
-// YELLOW BLOCK CLICK
-yellow.addEventListener('click', () => {
-  playerSequence.push('yellow');
-
-  if (gameSequence[level - 1] !== playerSequence[level - 1]) {
-    gameAlert.innerHTML = 'GAME OVER';
-  } else {
-    nextSequence();
-  }
-});
-
-// BLUE BLOCK CLICK
-blue.addEventListener('click', () => {
-  playerSequence.push('blue');
-
-  if (gameSequence[level - 1] !== playerSequence[level - 1]) {
-    gameAlert.innerHTML = 'GAME OVER';
-  } else {
-    nextSequence();
-  }
-});
+function playerVsGame() {
+  // // TEST IF (playerSequence) MATCHES (gameSequence)
+  // for (let i = 0; i < gameSequence.length; i++) {
+  //   if (playerSequence[i] !== gameSequence[i]) {
+  //     gameAlert.innerHTML = 'GAME OVER';
+  //     return false;
+  //   }
+  // }
+}
