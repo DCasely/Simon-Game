@@ -123,3 +123,50 @@ p {
 .blue-block:active {
   transform: scale(0.9);
 }
+
+.flashit {
+  color: #f2f;
+  -webkit-animation: flash linear 0.5s 2;
+  animation: flash linear 0.5s 2;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.btn {
+  background-color: red;
+  color: #fff;
+  font-size: 2.5rem;
+  border-radius: 5%;
+  border: 0.5rem solid black;
+  margin: auto 1rem;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  color: #fff;
+}
+
+.btn:active {
+  transform: scale(0.9);
+}

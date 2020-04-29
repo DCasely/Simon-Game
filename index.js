@@ -1,44 +1,28 @@
-document.querySelector('body').addEventListener('click', function () {
-  rollDice();
-  rollDice2();
+const startGameButton = document.querySelector('.start-button');
+const resetButton = document.querySelector('.reset-button');
+const green = document.querySelector('.green-block');
+const red = document.querySelector('.red-block');
+const yellow = document.querySelector('.yellow-block');
+const blue = document.querySelector('.blue-block');
 
-  winner();
+// ===============================================
+// START GAME
+// ===============================================
+
+startGameButton.addEventListener('click', () => {
+  alert('start');
 });
 
-// PLAYER DICE NUMBERS
+// ===============================================
+// RESET GAME
+// ===============================================
 
-let player1Dice, player2Dice;
+resetButton.addEventListener('click', () => {
+  alert('reset');
+});
 
-// ROLL DICE FUNCTIONS
+// ===============================================
+// BUTTON CLICKS
+// ===============================================
 
-function rollDice() {
-  let n = Math.floor(Math.random() * 6) + 1;
-  player1Dice = n;
-  let dice = document
-    .querySelector('.img1')
-    .setAttribute('src', `./images/dice${n}.png`);
-
-  return dice;
-}
-
-function rollDice2() {
-  let n = Math.floor(Math.random() * 6) + 1;
-  player2Dice = n;
-  let dice = document
-    .querySelector('.img2')
-    .setAttribute('src', `./images/dice${n}.png`);
-
-  return dice;
-}
-
-// WINNER
-
-function winner() {
-  if (player1Dice > player2Dice) {
-    return (document.querySelector('h1').innerHTML = '🚩 Player 1 Wins');
-  } else if (player2Dice > player1Dice) {
-    return (document.querySelector('h1').innerHTML = 'Player 2 Wins 🚩');
-  } else {
-    return (document.querySelector('h1').innerHTML = 'Draw');
-  }
-}
+green.addEventListener('click', () => {});
