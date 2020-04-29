@@ -72,9 +72,9 @@ p {
   border: 0.5rem solid black;
 }
 
-.green-block:hover {
+/* .green-block:hover {
   transform: scale(1.1);
-}
+} */
 
 .green-block:active {
   transform: scale(0.9);
@@ -88,9 +88,9 @@ p {
   border: 0.5rem solid black;
 }
 
-.red-block:hover {
+/* .red-block:hover {
   transform: scale(1.1);
-}
+} */
 
 .red-block:active {
   transform: scale(0.9);
@@ -104,9 +104,9 @@ p {
   border: 0.5rem solid black;
 }
 
-.yellow-block:hover {
+/* .yellow-block:hover {
   transform: scale(1.1);
-}
+} */
 
 .yellow-block:active {
   transform: scale(0.9);
@@ -120,9 +120,9 @@ p {
   border: 0.5rem solid black;
 }
 
-.blue-block:hover {
+/* .blue-block:hover {
   transform: scale(1.1);
-}
+} */
 
 .blue-block:active {
   transform: scale(0.9);
