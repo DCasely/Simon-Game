@@ -34,10 +34,14 @@ h1 {
   color: #c90c0c;
 }
 
+.start-game-row {
+  flex-direction: column;
+}
+
 p {
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: #c90c0c;
-  font-family: 'Indie Flower', cursive;
+  margin-top: 1rem;
 }
 
 .block-container {
