@@ -34,12 +34,17 @@ h1 {
   color: #c90c0c;
 }
 
+.title h2 {
+  font-family: 'Lobster', cursive;
+  color: #fff;
+}
+
 .start-game-row {
   flex-direction: column;
 }
 
-p {
-  font-size: 1.5rem;
+.game-alert {
+  font-size: 2rem;
   color: #c90c0c;
   margin-top: 1rem;
 }
@@ -70,7 +75,7 @@ p {
   align-items: center;
   flex-direction: column;
   font-family: 'Lobster', cursive;
-  color: #fff;
+  color: #000;
 }
 
 .yellow-block,
@@ -147,7 +152,7 @@ p {
 }
 
 .flashit {
-  color: #f2f;
+  color: #fff;
   -webkit-animation: flash linear 0.5s 2;
   animation: flash linear 0.5s 2;
 }
@@ -184,10 +189,10 @@ p {
   margin: auto 1rem;
 }
 
-.btn:hover {
+/* .btn:hover {
   transform: scale(1.1);
   color: #fff;
-}
+} */
 
 .btn:active {
   transform: scale(0.9);
