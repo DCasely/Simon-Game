@@ -23,9 +23,53 @@ function startGame() {
   } else {
     gameAlert.innerHTML = 'GAME HAS STARTED ALREADY';
   }
-
-  flashBlocks();
 }
+
+// ===============================================
+// NEXT SEQUENCE
+// ===============================================
+function nextSequence() {
+  // START A NEW ARRAY WITH FIRST RANDOM BLOCK
+  let random = Math.floor(Math.random() * 4);
+  let randomBlock = randomBlocks[random];
+
+  // PUSH NEXT RANDOM BLOCK INTO (gameSequence)
+  gameSequence.push(randomBlock);
+
+  // NEXT LEVEL
+  level++;
+  gameAlert.innerHTML = `LEVEL ${level}`;
+
+  // REMOVE FLASH CLASSES FOR REPEAT
+  green.classList.remove('flashit');
+  red.classList.remove('flashit');
+  yellow.classList.remove('flashit');
+  blue.classList.remove('flashit');
+
+  // FLASH NEXT COLORED BLOCK
+  flashBlocks();
+
+  // REMOVE FLASH CLASSES FOR REPEAT
+
+  setTimeout(() => {
+    green.classList.remove('flashit');
+  }, 1000);
+  setTimeout(() => {
+    red.classList.remove('flashit');
+  }, 1000);
+  setTimeout(() => {
+    yellow.classList.remove('flashit');
+  }, 1000);
+  setTimeout(() => {
+    blue.classList.remove('flashit');
+  }, 1000);
+
+  console.log(gameSequence);
+}
+
+// ===============================================
+// FLASH COLOR BLOCKS
+// ===============================================
 
 function flashBlocks() {
   // FLASH THE FIRST COLOR BLOCK
@@ -44,21 +88,49 @@ function flashBlocks() {
 // PLAYER SEQUENCE
 // ===============================================
 
-// GREEN BLOCK CLICK
+// ============================
+// GREEN KEYPRESS OR CLICK
+document.addEventListener('keypress', (e) => {
+  if (e.key.toLowerCase() === 'g' || e.key == 7) {
+    playerSequence.push('green');
+    // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
+    if (playerSequence.length === gameSequence.length) {
+      // TEST IF PLAYER MADE CORRECT CHOICES
+      for (let i = 0; i < gameSequence.length; i++) {
+        if (playerSequence[i] !== gameSequence[i]) {
+          gameAlert.innerHTML = 'GAME OVER';
+          gameAlert.classList.add('flashit');
+
+          setTimeout(() => {
+            gameAlert.classList.remove('flashit');
+          }, 1000);
+          return false;
+        }
+      }
+      // RESET (playerSequence)
+      playerSequence = [];
+
+      nextSequence();
+    }
+  }
+});
+
 green.addEventListener('click', () => {
   playerSequence.push('green');
-  console.log(playerSequence);
-
   // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
   if (playerSequence.length === gameSequence.length) {
     // TEST IF PLAYER MADE CORRECT CHOICES
     for (let i = 0; i < gameSequence.length; i++) {
       if (playerSequence[i] !== gameSequence[i]) {
         gameAlert.innerHTML = 'GAME OVER';
+        gameAlert.classList.add('flashit');
+
+        setTimeout(() => {
+          gameAlert.classList.remove('flashit');
+        }, 1000);
         return false;
       }
     }
-
     // RESET (playerSequence)
     playerSequence = [];
 
@@ -66,21 +138,49 @@ green.addEventListener('click', () => {
   }
 });
 
-// RED BLOCK CLICK
+// ============================
+// RED KEYPRESS OR CLICK
+document.addEventListener('keypress', (e) => {
+  if (e.key.toLowerCase() === 'r' || e.key == 9) {
+    playerSequence.push('red');
+    // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
+    if (playerSequence.length === gameSequence.length) {
+      // TEST IF PLAYER MADE CORRECT CHOICES
+      for (let i = 0; i < gameSequence.length; i++) {
+        if (playerSequence[i] !== gameSequence[i]) {
+          gameAlert.innerHTML = 'GAME OVER';
+          gameAlert.classList.add('flashit');
+
+          setTimeout(() => {
+            gameAlert.classList.remove('flashit');
+          }, 1000);
+          return false;
+        }
+      }
+      // RESET (playerSequence)
+      playerSequence = [];
+
+      nextSequence();
+    }
+  }
+});
+
 red.addEventListener('click', () => {
   playerSequence.push('red');
-  console.log(playerSequence);
-
   // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
   if (playerSequence.length === gameSequence.length) {
     // TEST IF PLAYER MADE CORRECT CHOICES
     for (let i = 0; i < gameSequence.length; i++) {
       if (playerSequence[i] !== gameSequence[i]) {
         gameAlert.innerHTML = 'GAME OVER';
+        gameAlert.classList.add('flashit');
+
+        setTimeout(() => {
+          gameAlert.classList.remove('flashit');
+        }, 1000);
         return false;
       }
     }
-
     // RESET (playerSequence)
     playerSequence = [];
 
@@ -88,21 +188,49 @@ red.addEventListener('click', () => {
   }
 });
 
-// YELLOW BLOCK CLICK
+// ============================
+// YELLOW KEYPRESS OR CLICK
+document.addEventListener('keypress', (e) => {
+  if (e.key.toLowerCase() === 'y' || e.key == 1) {
+    playerSequence.push('yellow');
+    // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
+    if (playerSequence.length === gameSequence.length) {
+      // TEST IF PLAYER MADE CORRECT CHOICES
+      for (let i = 0; i < gameSequence.length; i++) {
+        if (playerSequence[i] !== gameSequence[i]) {
+          gameAlert.innerHTML = 'GAME OVER';
+          gameAlert.classList.add('flashit');
+
+          setTimeout(() => {
+            gameAlert.classList.remove('flashit');
+          }, 1000);
+          return false;
+        }
+      }
+      // RESET (playerSequence)
+      playerSequence = [];
+
+      nextSequence();
+    }
+  }
+});
+
 yellow.addEventListener('click', () => {
   playerSequence.push('yellow');
-  console.log(playerSequence);
-
   // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
   if (playerSequence.length === gameSequence.length) {
     // TEST IF PLAYER MADE CORRECT CHOICES
     for (let i = 0; i < gameSequence.length; i++) {
       if (playerSequence[i] !== gameSequence[i]) {
         gameAlert.innerHTML = 'GAME OVER';
+        gameAlert.classList.add('flashit');
+
+        setTimeout(() => {
+          gameAlert.classList.remove('flashit');
+        }, 1000);
         return false;
       }
     }
-
     // RESET (playerSequence)
     playerSequence = [];
 
@@ -110,52 +238,55 @@ yellow.addEventListener('click', () => {
   }
 });
 
-// BLUE BLOCK CLICK
+// ============================
+// BLUE KEYPRESS OR CLICK
+document.addEventListener('keypress', (e) => {
+  if (e.key.toLowerCase() === 'b' || e.key == 3) {
+    playerSequence.push('blue');
+    // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
+    if (playerSequence.length === gameSequence.length) {
+      // TEST IF PLAYER MADE CORRECT CHOICES
+      for (let i = 0; i < gameSequence.length; i++) {
+        if (playerSequence[i] !== gameSequence[i]) {
+          gameAlert.innerHTML = 'GAME OVER';
+          gameAlert.classList.add('flashit');
+
+          setTimeout(() => {
+            gameAlert.classList.remove('flashit');
+          }, 1000);
+          return false;
+        }
+      }
+      // RESET (playerSequence)
+      playerSequence = [];
+
+      nextSequence();
+    }
+  }
+});
+
 blue.addEventListener('click', () => {
   playerSequence.push('blue');
-  console.log(playerSequence);
-
   // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
   if (playerSequence.length === gameSequence.length) {
     // TEST IF PLAYER MADE CORRECT CHOICES
     for (let i = 0; i < gameSequence.length; i++) {
       if (playerSequence[i] !== gameSequence[i]) {
         gameAlert.innerHTML = 'GAME OVER';
+        gameAlert.classList.add('flashit');
+
+        setTimeout(() => {
+          gameAlert.classList.remove('flashit');
+        }, 1000);
         return false;
       }
     }
-
     // RESET (playerSequence)
     playerSequence = [];
 
     nextSequence();
   }
 });
-
-// ===============================================
-// NEXT SEQUENCE
-// ===============================================
-function nextSequence() {
-  // REMOVE FLASH CLASSES FOR REPEAT
-  green.classList.remove('flashit');
-  red.classList.remove('flashit');
-  yellow.classList.remove('flashit');
-  blue.classList.remove('flashit');
-
-  // START A NEW ARRAY WITH FIRST RANDOM BLOCK
-  let random = Math.floor(Math.random() * 4);
-  let randomBlock = randomBlocks[random];
-
-  // PUSH NEXT RANDOM BLOCK INTO (gameSequence)
-  gameSequence.push(randomBlock);
-
-  level++;
-  gameAlert.innerHTML = `LEVEL ${level}`;
-  flashBlocks();
-
-  console.log(`playersequence: ${playerSequence}`);
-  console.log(`gamesequence: ${gameSequence}`);
-}
 
 // ===============================================
 // RESET GAME
