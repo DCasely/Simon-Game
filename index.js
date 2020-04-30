@@ -93,6 +93,13 @@ function flashBlocks() {
 document.addEventListener('keypress', (e) => {
   if (e.key.toLowerCase() === 'g' || e.key == 7) {
     playerSequence.push('green');
+
+    // ANIMATE BUTTON PRESS
+    green.style.transform = 'scale(0.9)';
+    setTimeout(() => {
+      green.style.transform = 'scale(1.0)';
+    }, 200);
+
     // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
     if (playerSequence.length === gameSequence.length) {
       // TEST IF PLAYER MADE CORRECT CHOICES
@@ -117,6 +124,7 @@ document.addEventListener('keypress', (e) => {
 
 green.addEventListener('click', () => {
   playerSequence.push('green');
+
   // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
   if (playerSequence.length === gameSequence.length) {
     // TEST IF PLAYER MADE CORRECT CHOICES
@@ -143,6 +151,13 @@ green.addEventListener('click', () => {
 document.addEventListener('keypress', (e) => {
   if (e.key.toLowerCase() === 'r' || e.key == 9) {
     playerSequence.push('red');
+
+    // ANIMATE BUTTON PRESS
+    red.style.transform = 'scale(0.9)';
+    setTimeout(() => {
+      red.style.transform = 'scale(1.0)';
+    }, 200);
+
     // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
     if (playerSequence.length === gameSequence.length) {
       // TEST IF PLAYER MADE CORRECT CHOICES
@@ -193,6 +208,13 @@ red.addEventListener('click', () => {
 document.addEventListener('keypress', (e) => {
   if (e.key.toLowerCase() === 'y' || e.key == 1) {
     playerSequence.push('yellow');
+
+    // ANIMATE BUTTON PRESS
+    yellow.style.transform = 'scale(0.9)';
+    setTimeout(() => {
+      yellow.style.transform = 'scale(1.0)';
+    }, 200);
+
     // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
     if (playerSequence.length === gameSequence.length) {
       // TEST IF PLAYER MADE CORRECT CHOICES
@@ -243,6 +265,13 @@ yellow.addEventListener('click', () => {
 document.addEventListener('keypress', (e) => {
   if (e.key.toLowerCase() === 'b' || e.key == 3) {
     playerSequence.push('blue');
+
+    // ANIMATE BUTTON PRESS
+    blue.style.transform = 'scale(0.9)';
+    setTimeout(() => {
+      blue.style.transform = 'scale(1.0)';
+    }, 200);
+
     // IF (playerSequence) and (gameSequence) LENGTH MATCH > (nextSequence)
     if (playerSequence.length === gameSequence.length) {
       // TEST IF PLAYER MADE CORRECT CHOICES
