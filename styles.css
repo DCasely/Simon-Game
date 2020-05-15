@@ -1,5 +1,10 @@
 body {
-  background-color: #393e46;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(186, 8, 8, 1) 100%
+  );
 }
 
 #main {
@@ -160,7 +165,7 @@ h1 {
   color: #fff;
   font-size: 1.5rem;
   border-radius: 5%;
-  border: 2.5px solid black;
+  border: 2.5px solid #fff;
   margin: auto 0.5rem;
 }
 
