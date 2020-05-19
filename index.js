@@ -10,6 +10,13 @@ let gameSequence = [];
 let playerSequence = [];
 let level = 0;
 
+// SOUNDS
+let audioBlue = new Audio('./sounds/blue.mp3');
+let audioGreen = new Audio('./sounds/green.mp3');
+let audioRed = new Audio('./sounds/red.mp3');
+let audioYellow = new Audio('./sounds/yellow.mp3');
+let audioWrong = new Audio('./sounds/wrong.mp3');
+
 // ===============================================
 // START GAME
 // ===============================================
@@ -75,12 +82,16 @@ function flashBlocks() {
   // FLASH THE FIRST COLOR BLOCK
   if (gameSequence[level - 1] === 'green') {
     green.classList.add('flashit');
+    audioGreen.play();
   } else if (gameSequence[level - 1] === 'red') {
     red.classList.add('flashit');
+    audioRed.play();
   } else if (gameSequence[level - 1] === 'yellow') {
     yellow.classList.add('flashit');
+    audioYellow.play();
   } else if (gameSequence[level - 1] === 'blue') {
     blue.classList.add('flashit');
+    audioBlue.play();
   }
 }
 
@@ -93,6 +104,7 @@ function flashBlocks() {
 document.addEventListener('keypress', (e) => {
   if (e.key.toLowerCase() === 'g' || e.key == 7) {
     playerSequence.push('green');
+    audioGreen.play();
 
     // ANIMATE BUTTON PRESS
     green.style.transform = 'scale(0.9)';
@@ -107,6 +119,7 @@ document.addEventListener('keypress', (e) => {
         if (playerSequence[i] !== gameSequence[i]) {
           gameAlert.innerHTML = 'GAME OVER';
           gameAlert.classList.add('flashit');
+          audioWrong.play();
 
           setTimeout(() => {
             gameAlert.classList.remove('flashit');
@@ -151,6 +164,7 @@ green.addEventListener('click', () => {
 document.addEventListener('keypress', (e) => {
   if (e.key.toLowerCase() === 'r' || e.key == 9) {
     playerSequence.push('red');
+    audioRed.play();
 
     // ANIMATE BUTTON PRESS
     red.style.transform = 'scale(0.9)';
@@ -208,6 +222,7 @@ red.addEventListener('click', () => {
 document.addEventListener('keypress', (e) => {
   if (e.key.toLowerCase() === 'y' || e.key == 1) {
     playerSequence.push('yellow');
+    audioYellow.play();
 
     // ANIMATE BUTTON PRESS
     yellow.style.transform = 'scale(0.9)';
@@ -265,6 +280,7 @@ yellow.addEventListener('click', () => {
 document.addEventListener('keypress', (e) => {
   if (e.key.toLowerCase() === 'b' || e.key == 3) {
     playerSequence.push('blue');
+    audioBlue.play();
 
     // ANIMATE BUTTON PRESS
     blue.style.transform = 'scale(0.9)';
